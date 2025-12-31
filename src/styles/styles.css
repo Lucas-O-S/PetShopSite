@@ -20,6 +20,20 @@
     --content-tertiary: #666666;
     --content-brand: #9282FA;
 
+    --border-primary: #3E3C41;
+    --border-secondary: #86819C;
+    --border-brand: #9282FA;
+    --border-divisor: #353339;
+
+    font-family: "Inter", sans-serif;
+
+}
+
+h1{
+    font-family: "Inter Tight", sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
 }
 
 header{
@@ -35,6 +49,8 @@ header{
     top: 0;
     left: 0;
     color: var(--content-brand);
+
+    font-size: 16px;
 }
 
 h1{
@@ -56,21 +72,22 @@ main{
 
 #scheduleHeader{
     width: 711px;
-    margin: 0 auto; 
-    flex-direction: row;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 #scheduleTitle{
     display: flex;
-    margin: 0 auto;
     flex-direction: column;
 
 }
 
 #scheduleDate{
     color: var(--content-secondary);
-    display: fl0ex;
-    margin: 0 auto;
+    display: flex;
 }
 
 #scheduleMaster{
@@ -81,10 +98,77 @@ main{
     margin-top: 32px;
 }
 
-.schedule{
+.scheduleCard{
     background-color: var(--background-tertiary);
     margin-bottom: 12px;
     width: 711px;
-    height: 136px;
+    height: auto;
     border-radius: 8px;
 }
+
+.scheduleCard-header{
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-divisor) ;
+
+    
+}
+
+.scheduleCard-header div{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+
+.scheduleCard-header-title{
+    padding-left: 20px;
+}
+
+.scheduleCard-header-period{
+    padding-right: 20px;
+}
+
+.scheduleCard table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+
+}
+
+.scheduleCard th, .scheduleCard td{
+    padding: 20px 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.scheduleCard tbody tr:not(:last-child) td{
+    border-bottom: 1px solid var(--border-divisor) ;
+
+}
+
+#newScheduleButton{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#newScheduleButton button{
+    width: 218px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: var(--background-brand);
+    box-shadow: 0px 0px 5px var(--background-brand);
+    border: none;
+    outline: none;
+}
+
+#newScheduleButton button:hover{
+    background-color: var(--background-highlights);
+    box-shadow: 0px 0px 5px var(--background-highlights);
+
+}
+
+
