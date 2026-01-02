@@ -5,7 +5,6 @@
 }
 
 :root{
-
     --body-background: #14151D;
     --header-background: #2E2C30;
 
@@ -26,31 +25,28 @@
     --border-divisor: #353339;
 
     font-family: "Inter", sans-serif;
-
 }
 
 h1{
     font-family: "Inter Tight", sans-serif;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;          /* 24px */
+    line-height: 2rem;          /* 32px */
     font-weight: bold;
 }
 
 header{
     background-color: var(--header-background);
-    width: 153px;
-    height: 48px;
+    max-width: 9.5625rem;       /* 153px */
+    height: 3rem;               /* 48px */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 0.9375rem; /* 15px */
     overflow: auto;
-    position: fixed;
     top: 0;
     left: 0;
     color: var(--content-brand);
-
-    font-size: 16px;
+    font-size: 1rem;            /* 16px */
 }
 
 h1{
@@ -59,9 +55,9 @@ h1{
 
 h3, td:first-child {
     color: var(--content-primary);
-    font-size: 16px;
+    font-size: 1rem;            /* 16px */
     font-weight: bold;
-    line-height: 24px;
+    line-height: 1.5rem;        /* 24px */
 }
 
 p, td{
@@ -69,9 +65,9 @@ p, td{
 }
 
 .icon{
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
+    max-width: 1.25rem;         /* 20px */
+    height: 1.25rem;            /* 20px */
+    margin-right: 0.5rem;       /* 8px */
 }
 
 body{
@@ -84,36 +80,37 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 80px; 
+    margin-top: 5rem;           /* 80px */
 }
+
 #scheduleContainer{
-    width: 800px;
+    max-width: 50rem;           /* 800px */
     min-height: 100vh;
-    padding-bottom: 80px;
+    padding-bottom: 5rem;       /* 80px */
 }
 
 #scheduleHeader{
     margin: 0 auto;
-    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
+
+
 #scheduleHeader p{
-    margin-top: 8px;
+    margin-top: 0.5rem;         /* 8px */
 }
 
 #scheduleTitle{
     display: flex;
     flex-direction: column;
-
 }
 
 #scheduleDate{
-    width: 200px;
-    height: 48px;
+    max-width: 12.5rem;         /* 200px */
+    height: 3rem;               /* 48px */
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator{
@@ -121,29 +118,22 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 }
 
 input[type="date"] {
-
     all: unset;
     text-align: left;
-    
-    width: 100%;
-
-    background: url("../svg/arrowDown.svg") no-repeat right 5px center;
-    
-    background-size: 20px;
-    padding-right: 40px; 
-
+    max-width: 100%;
+    background: url("../svg/arrowDown.svg") no-repeat right 0.3125rem center; /* 5px */
+    background-size: 1.25rem;   /* 20px */
+    padding-right: 2.5rem;      /* 40px */
 }
 
-
 .customInput {
-    border: 1px solid var(--border-primary);
-    border-radius: 8px;
+    border: 0.0625rem solid var(--border-primary); /* 1px */
+    border-radius: 0.5rem;      /* 8px */
     color: var(--content-secondary);
     display: flex;
     text-align: center;
     align-items: center;
-
-    padding-left: 10px;
+    padding-left: 0.625rem;     /* 10px */
 }
 
 .customInput:hover{
@@ -155,87 +145,78 @@ input[type="date"] {
     color: var(--content-primary);
 }
 
-
-
 #scheduleDateInput{
-    margin-left: 2px;
-    padding: 0 0;
-    font-size: 16px;
+    margin-left: 0.125rem;      /* 2px */
+    padding: 0;
+    font-size: 1rem;            /* 16px */
 }
-
-
 
 #scheduleMaster{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 32px;
-
+    margin-top: 2rem;           /* 32px */
 }
 
 .scheduleCard{
     background-color: var(--background-tertiary);
-    margin-bottom: 12px;
+    margin-bottom: 0.75rem;     /* 12px */
     height: auto;
-    border-radius: 8px;
-    width: 100%;
-
+    border-radius: 0.5rem;      /* 8px */
+    max-width: 100%;
 }
 
 .scheduleCard-header{
-
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--border-divisor) ;
-
-    
+    border-bottom: 0.0625rem solid var(--border-divisor); /* 1px */
 }
 
 .scheduleCard-header div{
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 0.75rem;       /* 12px */
+    padding-bottom: 0.75rem;    /* 12px */
 }
 
-
 .scheduleCard-header-title{
-    padding-left: 20px;
+    padding-left: 1.25rem;      /* 20px */
     display: flex;
 }
 
 .scheduleCard-header-period{
-    padding-right: 20px;
-    
+    padding-right: 1.25rem;     /* 20px */
     color: var(--content-secondary);
-    font-size: 16px;
+    font-size: 1rem;            /* 16px */
     font-weight: bold;
-    line-height: 24px;
+    line-height: 1.5rem;        /* 24px */
 }
 
 .scheduleCard table{
     width: 100%;
     border-collapse: collapse;
-    margin: 12px 0;
-}
-
-colgroup col{
-    width: auto;
+    margin: 0.75rem 0;
+    table-layout: fixed;
 }
 
 colgroup col:first-child{
-    width: 100px;
+    width: 6.25rem; /* 100px */
 }
 
-.scheduleCard th, .scheduleCard td {
-    padding: 30px 30px;
+.scheduleCard th,
+.scheduleCard td {
+    padding: 1.875rem 1.25rem; /* 30px 20px */
     text-align: left;
     vertical-align: middle;
 }
 
+.scheduleCard td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .scheduleCard td:first-child {
     padding-right: 0;
-    width: 40px;
     white-space: nowrap;
 }
 
@@ -249,43 +230,74 @@ colgroup col:first-child{
 }
 
 .scheduleCard tbody tr:not(:last-child) td{
-    border-bottom: 1px solid var(--border-divisor) ;
+    border-bottom: 0.0625rem solid var(--border-divisor); /* 1px */
 }
 
 .pet{
     font-weight: bold;
-    size: 12px;
-    line-height: 16px;
+    font-size: 1rem;         /* 12px */
+    line-height: 1rem;          /* 16px */
     color: var(--content-primary);
 }
 
 #newScheduleButton{
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1.25rem;            /* 20px */
+    right: 1.25rem;             /* 20px */
     z-index: 1000;
 }
 
 #newScheduleButton button{
-    width: 218px;
-    height: 48px;
-    border-radius: 8px;
+    max-width: 13.625rem;       /* 218px */
+    height: 3rem;               /* 48px */
+    border-radius: 0.5rem;      /* 8px */
     background-color: var(--background-brand);
-    box-shadow: 0px 0px 5px var(--background-brand);
+    box-shadow: 0 0 0.3125rem var(--background-brand); /* 5px */
     border: none;
     outline: none;
 }
 
 #newScheduleButton button:hover{
     background-color: var(--background-highlights);
-    box-shadow: 0px 0px 5px var(--background-highlights);
-
+    box-shadow: 0 0 0.3125rem var(--background-highlights);
 }
 
 button h2{
     color: var(--background-primary);
-    font-size: 16px;
+    font-size: 1rem;            /* 16px */
     font-weight: bold;
 }
 
+@media(max-width: 37.5rem){
 
+    main{
+        margin-top: 2rem;
+    }
+
+    #scheduleHeader{
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 90%;
+    }
+
+    #scheduleContainer{
+        margin-top: 1rem;   
+        max-width: 80%;
+    }
+
+    #newScheduleButton{
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+    }
+
+    #newScheduleButton button{
+        min-width: 60%;
+        max-width: 80%;
+        max-width: 20rem;
+        padding: 1rem 1.5rem;
+        border-radius: 0.75rem;
+    }
+
+}
