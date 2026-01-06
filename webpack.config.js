@@ -24,6 +24,13 @@ module.exports = {
     plugins: [new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src', 'index.html'),
         favicon: path.resolve("src", "assets/svg", "Moon Stars.svg")
-    })]
+    })],
+
+    module: {
+        rules: [{
+            "test": /\.css$/,
+            use : ['style-loader', 'css-loader']
+        }]
+    }
 
 }
