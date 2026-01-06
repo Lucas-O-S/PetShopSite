@@ -1,3 +1,5 @@
+@import 'color.css';
+
 *{
     margin: 0;
     padding: 0;
@@ -5,24 +7,7 @@
 }
 
 :root{
-    --body-background: #14151D;
-    --header-background: #2E2C30;
 
-    --background-primary: #151515;
-    --background-secondary: #1E1E1E;
-    --background-tertiary: #23242C;
-    --background-brand: #9282FA;
-    --background-highlights: #BDB4FA;
-    
-    --content-primary: #FFFFFF;
-    --content-secondary: #98959D;
-    --content-tertiary: #666666;
-    --content-brand: #9282FA;
-
-    --border-primary: #3E3C41;
-    --border-secondary: #86819C;
-    --border-brand: #9282FA;
-    --border-divisor: #353339;
 
     font-family: "Inter", sans-serif;
     color: var(--content-primary);
@@ -115,37 +100,6 @@ main{
     max-height: 4rem;               /* 48px */
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator{
-    opacity: 0;
-}
-
-input[type="date"] {
-    all: unset;
-    text-align: left;
-    max-width: 100%;
-    background: url("../svg/arrowDown.svg") no-repeat right 0.3125rem center; /* 5px */
-    background-size: 1.25rem;   /* 20px */
-    padding-right: 2.5rem;      /* 40px */
-}
-
-.customInput {
-    border: 0.0625rem solid var(--border-primary); /* 1px */
-    border-radius: 0.5rem;      /* 8px */
-    color: var(--content-secondary);
-    display: flex;
-    text-align: center;
-    align-items: center;
-    padding-left: 0.625rem;     /* 10px */
-}
-
-.customInput:hover{
-    border-color: var(--border-secondary);
-}
-
-.customInput:focus-within{
-    border-color: var(--border-brand);
-    color: var(--content-primary);
-}
 
 #scheduleDateInput{
     margin-left: 0.125rem;      /* 2px */

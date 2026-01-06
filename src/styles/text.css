@@ -1,0 +1,44 @@
+:root{
+
+
+    font-family: "Inter", sans-serif;
+    color: var(--content-primary);
+
+}
+
+
+h1{
+    font-family: "Inter Tight", sans-serif;
+    font-size: 1.5rem;          /* 24px */
+    line-height: 2rem;          /* 32px */
+    font-weight: bold;
+
+}
+
+header{
+    background-color: var(--header-background);
+    min-width: 8rem;
+    max-width: 9.5625rem;       /* 153px */
+    height: 3rem;               /* 48px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 0.9375rem; /* 15px */
+    overflow: auto;
+    top: 0;
+    left: 0;
+    color: var(--content-brand);
+    font-size: 1rem;            /* 16px */
+}
+
+h3, td:first-child {
+    font-size: 1rem;            /* 16px */
+    font-weight: bold;
+    line-height: 1.5rem;        /* 24px */
+    color: var(--content-primary);
+}
+
+p, td{
+    color: var(--content-secondary);
+    line-height: 1.8rem;
+}

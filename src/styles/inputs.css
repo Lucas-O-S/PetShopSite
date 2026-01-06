@@ -1,0 +1,31 @@
+input[type="date"]::-webkit-calendar-picker-indicator{
+    opacity: 0;
+}
+
+input[type="date"] {
+    all: unset;
+    text-align: left;
+    max-width: 100%;
+    background: url("../svg/arrowDown.svg") no-repeat right 0.3125rem center; /* 5px */
+    background-size: 1.25rem;   /* 20px */
+    padding-right: 2.5rem;      /* 40px */
+}
+
+.customInput {
+    border: 0.0625rem solid var(--border-primary); /* 1px */
+    border-radius: 0.5rem;      /* 8px */
+    color: var(--content-secondary);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding-left: 0.625rem;     /* 10px */
+}
+
+.customInput:hover{
+    border-color: var(--border-secondary);
+}
+
+.customInput:focus-within{
+    border-color: var(--border-brand);
+    color: var(--content-primary);
+}

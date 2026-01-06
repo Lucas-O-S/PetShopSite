@@ -1,0 +1,23 @@
+:root{
+    --body-background: #14151D;
+    --header-background: #2E2C30;
+
+    --background-primary: #151515;
+    --background-secondary: #1E1E1E;
+    --background-tertiary: #23242C;
+    --background-brand: #9282FA;
+    --background-highlights: #BDB4FA;
+    
+    --content-primary: #FFFFFF;
+    --content-secondary: #98959D;
+    --content-tertiary: #666666;
+    --content-brand: #9282FA;
+
+    --border-primary: #3E3C41;
+    --border-secondary: #86819C;
+    --border-brand: #9282FA;
+    --border-divisor: #353339;
+
+
+
+}
