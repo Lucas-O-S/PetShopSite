@@ -6,8 +6,7 @@
 
 header{
     background-color: var(--header-background);
-    min-width: 8rem;
-    max-width: 9.5625rem;       /* 153px */
+    min-width: 13rem;
     height: 3rem;               /* 48px */
     display: flex;
     align-items: center;
@@ -20,9 +19,13 @@ header{
     font-size: 1rem;            /* 16px */
 }
 
+header icon{
+    height: 1.5rem;            /* 24px */
+    margin-right: 0.5rem;      /* 8px */
+}
 
 .icon{
-    max-width: 1.25rem;         /* 20px */
+    min-width: 1.25rem;         /* 20px */
     height: 1.25rem;            /* 20px */
     margin-right: 0.5rem;       /* 8px */
 }
