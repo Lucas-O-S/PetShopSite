@@ -1,0 +1,26 @@
+{
+    "schedules": [
+        {
+            "animalName" : "Rex",
+            "ownerName" : "John Doe",
+            "service" : "Grooming",
+            "date" : "2024-07-10",
+            "time" : "10:00"
+        },
+        {
+            "animalName" : "Whiskers",
+            "ownerName" : "Jane Smith",
+            "service" : "Vaccination",
+            "date" : "2024-07-11",
+            "time" : "14:00"
+        },
+        {
+            "animalName" : "Buddy",
+            "ownerName" : "Alice Johnson",
+            "service" : "Check-up",
+            "date" : "2024-07-12",
+            "time" : "09:30"
+        }
+
+    ]
+}
