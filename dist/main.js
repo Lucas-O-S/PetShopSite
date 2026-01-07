@@ -27,7 +27,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var dayj
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ \"./src/styles/index.css\");\n/* harmony import */ var _libs_day_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./libs/day.js */ \"./src/libs/day.js\");\n\n\n\n\n\n//# sourceURL=webpack://petshopsite/./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ \"./src/styles/index.css\");\n/* harmony import */ var _libs_day_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./libs/day.js */ \"./src/libs/day.js\");\n/* harmony import */ var _modules_page_load_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/page-load.js */ \"./src/modules/page-load.js\");\n/* harmony import */ var _modules_page_load_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_page_load_js__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\n\n\n//# sourceURL=webpack://petshopsite/./src/main.js?");
+
+/***/ }),
+
+/***/ "./src/modules/Schedule/schedule.js":
+/*!******************************************!*\
+  !*** ./src/modules/Schedule/schedule.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   SchedulerLoader: () => (/* binding */ SchedulerLoader)\n/* harmony export */ });\n/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dayjs */ \"./node_modules/dayjs/dayjs.min.js\");\n/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_0__);\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module '../../../node_modules/dayjs/esm/plugin/minMax/index.d'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\n\nvar test = [{\n  animalName: \"Rex\",\n  ownerName: \"John Doe\",\n  service: \"Grooming\",\n  date: \"2024-07-10\",\n  time: \"10:00\"\n}, {\n  animalName: \"Whiskers\",\n  ownerName: \"Jane Smith\",\n  service: \"Vaccination\",\n  date: \"2024-07-11\",\n  time: \"14:00\"\n}, {\n  animalName: \"Buddy\",\n  ownerName: \"Alice Johnson\",\n  service: \"Check-up\",\n  date: \"2024-07-12\",\n  time: \"09:30\"\n}];\nvar scheduleTablesIds = [{\n  id: \"ScheduleMorning\",\n  maxTime: \"12:00\",\n  minTime: \"09:00\"\n}, {\n  id: \"ScheduleAfternoon\",\n  maxTime: \"18:00\",\n  minTime: \"13:00\"\n}, {\n  id: \"ScheduleNight\",\n  maxTime: \"21:00\",\n  minTime: \"19:00\"\n}];\nfunction _loadSchedule(date) {\n  scheduleTablesIds.forEach(function (schedule) {\n    var table = document.getElementById(schedule.id).querySelector(\"table\").querySelector(\"tbody\");\n    var fillteredAppointment = test.filter(function (appointment) {\n      return date === date;\n    });\n    fillteredAppointment.forEach(function (appointment) {\n      var tr = document.createElement('tr');\n      var time = document.createElement(\"td\");\n      time.textContent = appointment.time;\n      var petName = document.createElement(\"span\");\n      petName.textContent = appointment.animalName;\n      petName.classList.add(\"pet\");\n      var petTd = document.createElement(\"td\");\n      petTd.appendChild(petName);\n      petTd.innerHTML += '/' + appointment.ownerName;\n      var service = document.createElement(\"td\");\n      service.textContent = appointment.service;\n      var remove = document.createElement(\"td\");\n      remove.textContent = \"Remover agendamento\";\n      tr.appendChild(time);\n      tr.appendChild(petTd);\n      tr.appendChild(service);\n      tr.appendChild(remove);\n      table.appendChild(tr);\n      console.log(tr);\n    });\n  });\n}\nvar SchedulerLoader = {\n  loadSchedule: function loadSchedule(date) {\n    _loadSchedule(date);\n  }\n};\n\n//# sourceURL=webpack://petshopsite/./src/modules/Schedule/schedule.js?");
+
+/***/ }),
+
+/***/ "./src/modules/page-load.js":
+/*!**********************************!*\
+  !*** ./src/modules/page-load.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var _require = __webpack_require__(/*! ./Schedule/schedule.js */ \"./src/modules/Schedule/schedule.js\"),\n  SchedulerLoader = _require.SchedulerLoader;\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  console.log(\"Page Loaded and Schedule Initialized\");\n  SchedulerLoader.loadSchedule(\"2024-07-11\");\n});\n\n//# sourceURL=webpack://petshopsite/./src/modules/page-load.js?");
 
 /***/ }),
 
