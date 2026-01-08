@@ -4,6 +4,10 @@ import {dayController} from './Schedule/dayController';
 document.addEventListener("DOMContentLoaded", () => {
     dayController.startDate();
     console.log("Page Loaded and Schedule Initialized");
-    SchedulerLoader.loadSchedule("2024-07-11");
+    SchedulerLoader.loadSchedule(document.getElementById("scheduleDateInput").value);
 
+});
+
+document.getElementById("scheduleDateInput").addEventListener("change", (event) => {
+    SchedulerLoader.loadSchedule(event.target.value);
 });
