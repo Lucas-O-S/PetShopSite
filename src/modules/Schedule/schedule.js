@@ -1,46 +1,8 @@
-
 import dayjs, { Dayjs } from "dayjs";
 import customParseFormat from 'dayjs/plugin/customParseFormat';
+import { apiConfig } from "../service/api-config";
+import { ScheduleService } from "../service/ScheduleService";
 dayjs.extend(customParseFormat);
-
-
-const test = [
-    {
-        animalName : "Rex",
-        ownerName : "John Doe",
-        service : "Grooming",
-        date : "2026-01-08",
-        time : "10:00"
-    },
-    {
-        animalName : "Whiskers",
-        ownerName : "Jane Smith",
-        service : "Vaccination",
-        date : "2026-01-08",
-        time : "14:00"
-    },
-    {
-        animalName : "Buddy",
-        ownerName : "Alice Johnson",
-        service : "Check-up",
-        date : "2026-01-07",
-        time : "09:30"
-    },
-    {
-        animalName : "jax",
-        ownerName : "Alice Johnson",
-        service : "Check-up",
-        date : "2026-01-09",
-        time : "19:30"
-    },
-    {
-        animalName : "jox",
-        ownerName : "Alice Johnson",
-        service : "Check-up",
-        date : "2026-01-07",
-        time : "18:00"
-    }
-]
 
 const scheduleTablesIds = [
     {
@@ -60,17 +22,24 @@ const scheduleTablesIds = [
     }
 ]
 
-function loadSchedule(date){
+async function loadSchedule(date){
+    
     clearSchedule();
+    
+    const scheduleList = await ScheduleService.getSchedule()
+
     scheduleTablesIds.forEach(schedule =>{
 
         const table = document.getElementById(schedule.id).querySelector("table").querySelector("tbody");
-        const fillteredAppointment = test.filter(appointment => {
-            console.log(dayjs(date).date());
-            console.log(dayjs(schedule.date).date());
-            return dayjs(date).date() == dayjs(appointment.date).date() &&
-            (dayjs(appointment.time, "HH:mm").isAfter(dayjs(schedule.minTime, "HH:mm")) || dayjs(appointment.time, "HH:mm").isSame(dayjs(schedule.minTime, "HH:mm")))
-            && (dayjs(appointment.time, "HH:mm").isBefore(dayjs(schedule.maxTime, "HH:mm")) || dayjs(appointment.time, "HH:mm").isSame(dayjs(schedule.maxTime, "HH:mm")));
+        
+        console.log(scheduleList);
+
+        const fillteredAppointment = scheduleList.filter(appointment => {
+
+            return dayjs(date).date() == dayjs(appointment.date).date()
+                && (dayjs(appointment.time, "HH:mm").isAfter(dayjs(schedule.minTime, "HH:mm")) || dayjs(appointment.time, "HH:mm").isSame(dayjs(schedule.minTime, "HH:mm")))
+                && (dayjs(appointment.time, "HH:mm").isBefore(dayjs(schedule.maxTime, "HH:mm")) || dayjs(appointment.time, "HH:mm").isSame(dayjs(schedule.maxTime, "HH:mm")));
+       
         })
 
         fillteredAppointment.forEach(appointment =>{
@@ -118,7 +87,7 @@ function clearSchedule(){
 }
 
 export const SchedulerLoader  = {
-    loadSchedule : function(date) {
-        loadSchedule(date);
+    loadSchedule : async function(date) {
+        await loadSchedule(date);
     }
 }
