@@ -2,7 +2,7 @@
 @import "text.css";
 @import "inputs.css";
 @import "global.css";
-
+@import "modal.css";
 
 td:first-child {
     font-size: 1rem;            /* 16px */
@@ -62,7 +62,7 @@ td{
 }
 
 #scheduleMaster{
-    display: flex;
+    display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -197,7 +197,7 @@ button h2{
     }
 
     #scheduleContainer{
-        margin-top: 1rem;   
+        margin-top: 1rem;
         max-width: 80%;
         padding-bottom: 3rem;
     }

@@ -38,6 +38,10 @@ module.exports = {
                     from: path.resolve(__dirname, 'src', 'assets/img'),
                     to: path.resolve(__dirname, 'dist', 'assets/img')
                 },
+                {
+                    from: path.resolve(__dirname, 'src', 'pages'),
+                    to: path.resolve(__dirname, 'dist', 'pages')
+                }
 
             
             ]
