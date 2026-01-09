@@ -200,6 +200,7 @@ button h2{
         margin-top: 1rem;
         max-width: 80%;
         padding-bottom: 3rem;
+        flex: 1;
     }
 
     
@@ -209,12 +210,16 @@ button h2{
 
 
     #newScheduleButton{
-        width: 100%;
+        margin-top: 0rem;
         position: static;
+        bottom: 0;
+        left: 0;
+        width: 100%;
         display: flex;
         justify-content: center;
         background-color: var(--background-tertiary);
-        padding: 2rem 0 2rem;
+        padding: 1.5rem 0;
+        z-index: 1000;
     }
 
     #newScheduleButton button{
@@ -224,10 +229,17 @@ button h2{
         padding: 1rem 1.5rem;
         border-radius: 0.75rem;
     }
+  
+    .scheduleCard{
+        width: 100%;
+        min-width: 15rem; /* 320px – largura mínima tipo tabela mobile */
+    }
+
 
     .scheduleCard table {
         display: block;
         width: 100%;
+        
     }
 
     .scheduleCard tbody {

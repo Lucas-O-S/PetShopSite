@@ -1,3 +1,9 @@
+input{
+    all: unset;
+    text-align: left;
+    max-width: 100%;
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator{
     opacity: 0;
 }
@@ -8,7 +14,6 @@ input[type="date"] {
     max-width: 100%;
     background: url("../assets/svg/arrowDown.svg") no-repeat right 0.3125rem center; /* 5px */
     background-size: 1.25rem;   /* 20px */
-    padding-right: 2.5rem;      /* 40px */
 }
 
 .customInput {
