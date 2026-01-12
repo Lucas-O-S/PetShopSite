@@ -59,10 +59,11 @@
 
 }
 
-label{
+.fieldArea .fieldArea-item label{
     display: block;
     width: 100%;
     text-align: left;
+    margin-bottom: 0.25rem;
 }
 
 .fieldRow{
