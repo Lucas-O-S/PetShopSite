@@ -1,6 +1,6 @@
 const { SchedulerLoader } = require("./Schedule/schedule.js");
 import {dayController} from './Schedule/dayController';
-const { callSheduleRegisterModal } = require("./Modal/ScheduleRegister.Modal.js");
+const { modalController } = require("./Modal/ModalController.js");
 
 document.addEventListener("DOMContentLoaded", () => {
     dayController.startDate();
@@ -15,5 +15,28 @@ document.getElementById("scheduleDateInput").addEventListener("change", (event) 
 
 
 document.getElementById("newScheduleButton").addEventListener("click", () => {
-    callSheduleRegisterModal();
-})
+    
+    modalController.callSheduleRegisterModal();
+
+});
+
+document.addEventListener("click", (e) =>{
+
+    if (e.target.closest('modalExit')) {
+        modalController.exitSheduleRegisterModal(e);
+    }
+
+
+});
+
+document.addEventListener("submit", (e) => {
+
+    if (e.target.id === "newScheduleForm") {
+
+        e.preventDefault();
+        
+        modalController.submitNewSchedule(e);
+  
+    }
+
+});
