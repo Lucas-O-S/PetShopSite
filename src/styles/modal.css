@@ -13,10 +13,13 @@
 
 .scheduleModal-container {
 
-    min-width: 45%; 
-    min-height: 90%;
+    padding-top: 2.5rem;
+
+    min-width: 27.938rem; 
+    min-height: 85%;
     width: 29.813rem;
-    height: 40rem;
+    max-height: 90%;
+    max-width: 90%;
 
     border-radius: 0.625rem;
 
@@ -30,10 +33,9 @@
     
     background-color: var(--background-tertiary);
     
-    align-items: center;
+    align-items: stretch;
 
-    padding: 0;
-    margin: 0;
+    margin: auto ;
 
     overflow-y: auto;
 
@@ -41,21 +43,46 @@
 }
 
 .fieldArea{
+    
+    padding-top: 1.75rem;
+
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .fieldArea .fieldArea-item {
     margin-bottom: 1rem ;
+    width: 100%;
+
+}
+
+label{
+    display: block;
+    width: 100%;
+    text-align: left;
 }
 
 .fieldRow{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 1rem;
+    width: 100%;
+    justify-content: center;
+
+    
 }
 
-.fieldRow > *{
-    flex: 1 1 10rem;
-    min-width: 0;
+.fieldArea-item .customInput{
+
+    width: 100%;
 }
+
+.fieldArea-item .customInput input[type="text"]{
+    min-height: 4.75rem;
+}
+
+
+
