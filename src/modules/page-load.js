@@ -22,7 +22,7 @@ document.getElementById("newScheduleButton").addEventListener("click", () => {
 
 document.addEventListener("click", (e) =>{
 
-    if (e.target.closest('modalExit')) {
+    if (e.target.closest('#modalExit')) {
         modalController.exitSheduleRegisterModal(e);
     }
 
