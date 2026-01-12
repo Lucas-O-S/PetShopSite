@@ -162,23 +162,10 @@ colgroup col:first-child{
     min-width:  13.625rem;
     max-width: 13.625rem;       /* 218px */
     height: 3rem;               /* 48px */
-    border-radius: 0.5rem;      /* 8px */
-    background-color: var(--background-brand);
     box-shadow: 0 0 0.5rem var(--background-brand); /* 5px */
-    border: none;
-    outline: none;
+
 }
 
-#newScheduleButton button:hover{
-    background-color: var(--background-highlights);
-    box-shadow: 0 0 0.5rem var(--background-highlights);
-}
-
-button h2{
-    color: var(--background-primary);
-    font-size: 1rem;            /* 16px */
-    font-weight: bold;
-}
 
 @media(max-width: 37.5rem){
 
