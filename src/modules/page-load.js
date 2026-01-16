@@ -1,5 +1,6 @@
 const { SchedulerLoader } = require("./Schedule/schedule.js");
 import {dayController} from './Schedule/dayController';
+import { phoneMask } from './Utils/masks.js';
 const { modalController } = require("./Modal/ModalController.js");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,7 +32,7 @@ document.addEventListener("click", (e) =>{
 
 document.addEventListener("submit", (e) => {
 
-    if (e.target.id === "newScheduleForm") {
+    if (e.target && e.target.id === "newScheduleForm") {
 
         e.preventDefault();
         
@@ -39,4 +40,11 @@ document.addEventListener("submit", (e) => {
   
     }
 
+});
+
+document.addEventListener("input", (e) => {
+
+    if(e.target && e.target.classList.contains("telephone")){
+        e.target.value = phoneMask(e.target.value);
+    }
 });

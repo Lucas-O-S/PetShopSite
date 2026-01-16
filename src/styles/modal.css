@@ -101,6 +101,7 @@
     width: 100%;
 }
 
+
 .fieldArea-item .customInput input[type="text"], select{
     min-height: 3rem;
 }

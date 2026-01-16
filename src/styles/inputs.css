@@ -1,8 +1,14 @@
+
+input{
+    width: 100%;
+}
+
 input, textarea, select{
     all: unset;
     text-align: left;
-    max-width: 100%;
+    width: 100%;
 }
+
 
 input[type="date"]::-webkit-calendar-picker-indicator{
     opacity: 0;

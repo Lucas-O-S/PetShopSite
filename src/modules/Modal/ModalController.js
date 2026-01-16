@@ -1,3 +1,7 @@
+import { schedule } from "../model/schedule";
+import { ScheduleService } from "../service/ScheduleService";
+import { SchedulerLoader } from "../Schedule/schedule";
+
 const callSheduleRegisterModal = () => {
   fetch('../../pages/scheduleModal.html')
     .then(response => response.text())
@@ -31,8 +35,22 @@ const submitNewSchedule = () => {
   const Date = document.getElementById("Date").value;
   const Hour = document.getElementById("Hour").value;
 
+  const newSchedule = schedule({
+    animalName: PetName,
+    ownerName: tutorName,
+    service: Service,
+    date: Date,
+    time: Hour
+  })
 
-  
+  console.log(newSchedule.returnSchedule);
+
+  ScheduleService.postSchedule(newSchedule.returnSchedule());
+
+  SchedulerLoader.loadSchedule(Date);
+
+
+  exitSheduleRegisterModal({target: document.getElementById("modalExit")});
 
 }
 

@@ -6,7 +6,7 @@ let _service = "";
 let _date = "";
 let _time = "";
 
-export const constructor = function({
+export const schedule = function({
     animalName = "",
     ownerName = "",
     service = "",
@@ -59,6 +59,16 @@ export const constructor = function({
 
         setTime(value) {
         _time = value;
+        },
+
+        returnSchedule() {
+            return {
+                animalName: _animalName,
+                ownerName: _ownerName,
+                service: _service,
+                date: _date,
+                time: _time
+            };
         }
     };
 };
