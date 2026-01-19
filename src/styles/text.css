@@ -42,3 +42,8 @@ p{
     color: var(--content-secondary);
     line-height: 1.8rem;
 }
+
+.errorText{
+    color: var(--content-error);
+}
+

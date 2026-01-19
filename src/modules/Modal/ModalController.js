@@ -2,6 +2,15 @@ import { schedule } from "../model/schedule";
 import { ScheduleService } from "../service/ScheduleService";
 import { SchedulerLoader } from "../Schedule/schedule";
 
+const error = {
+  
+  text : "",
+
+  hasError: true
+
+
+}
+
 const callSheduleRegisterModal = () => {
   fetch('../../pages/scheduleModal.html')
     .then(response => response.text())
@@ -26,11 +35,15 @@ const exitSheduleRegisterModal = (e) => {
 
 };
 
+function verifySchedule(){
+  
+}
+
 const submitNewSchedule = () => {
  
   const tutorName = document.getElementById("TutorName").value;
   const PetName = document.getElementById("PetName").value;
-  const Telefone = document.getElementById("Telefone").value;
+  const phone = document.getElementById("Telefone").value;
   const Service = document.getElementById("Service").value;
   const Date = document.getElementById("Date").value;
   const Hour = document.getElementById("Hour").value;
@@ -40,7 +53,8 @@ const submitNewSchedule = () => {
     ownerName: tutorName,
     service: Service,
     date: Date,
-    time: Hour
+    time: Hour,
+    phone: phone
   })
 
   console.log(newSchedule.returnSchedule);
@@ -51,6 +65,26 @@ const submitNewSchedule = () => {
 
 
   exitSheduleRegisterModal({target: document.getElementById("modalExit")});
+
+}
+
+const errorControler = () => {
+
+  const errorElement = document.getElementById("insertScheduleError");
+
+  console.log(errorElement);
+
+  if(!errorElement) return;
+
+  if(error.hasError){
+  
+    errorElement.textContent = error.text;
+  
+  }
+
+  else
+    errorElement.classList.add("hidden");
+  
 
 }
 
@@ -66,6 +100,10 @@ export const modalController = {
 
   submitNewSchedule: function(e){
     submitNewSchedule(e);
+  },
+
+  errorControler : function () {
+    errorControler();
   }
   
 }

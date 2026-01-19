@@ -14,13 +14,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     opacity: 0;
 }
 
-input[type="date"] {
-    all: unset;
-    text-align: left;
-    max-width: 100%;
+input[type="date"], select{
     background: url("../assets/svg/arrowDown.svg") no-repeat right 0.3125rem center; /* 5px */
-    background-size: 1.25rem;   /* 20px */
 }
+
+
 
 
 
@@ -36,6 +34,7 @@ select{
     text-align: center;
     align-items: center;
     padding-left: 0.625rem;     /* 10px */
+    padding-right: 0.4rem;
 }
 
 .customInput:hover{

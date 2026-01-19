@@ -23,7 +23,7 @@ document.getElementById("newScheduleButton").addEventListener("click", () => {
 
 document.addEventListener("click", (e) =>{
 
-    if (e.target.closest('#modalExit')) {
+    if (e.target.closest('.modalExit')) {
         modalController.exitSheduleRegisterModal(e);
     }
 
@@ -37,7 +37,8 @@ document.addEventListener("submit", (e) => {
         e.preventDefault();
         
         modalController.submitNewSchedule(e);
-  
+        
+        modalController.errorControler();
     }
 
 });
