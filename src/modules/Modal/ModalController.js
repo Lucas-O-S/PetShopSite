@@ -37,9 +37,7 @@ const exitSheduleRegisterModal = (e) => {
 
 };
 
-function verifySchedule(){
-  
-}
+
 
 const submitNewSchedule = () => {
  
@@ -74,6 +72,10 @@ const submitNewSchedule = () => {
   else if(DateController.isBeforeDate(dayjs(), scheduleDate)){
     error.text = 'Data invalida, digite uma data posterior';
     error.hasError = true;
+  }
+  else if(!ScheduleService.blockSameTimeSchedule(scheduleDate)){
+      error.text = 'Agenda indisponivel, já foi marcada nessa data e hora';
+      error.hasError = true;
   }
 
 
@@ -111,6 +113,21 @@ const errorControler = () => {
 
 }
 
+const deleteSchedule = async (e) => {
+  if(event.target.classList.contains("deleteButton")){
+    
+    const tr = event.target.closest('tr');
+
+    const id = tr.id;
+
+    if (confirm(`Tem certeza que deseja remover o agendamento ${id}?`)) 
+        await ScheduleService.deleteSchedule(id);
+    
+  }
+
+  SchedulerLoader.loadSchedule();
+} 
+
 export const modalController = {
 
   callSheduleRegisterModal : function(){
@@ -127,7 +144,12 @@ export const modalController = {
 
   errorControler : function () {
     errorControler();
+  },
+
+  deleteSchedule : async function (e){
+    await deleteSchedule(e);
   }
+
   
 }
 

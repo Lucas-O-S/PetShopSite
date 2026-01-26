@@ -1,4 +1,7 @@
 import { apiConfig } from "./api-config";
+import { schedule } from '../model/scheduleModel';
+import dayjs from "dayjs";
+import { DateController } from "../Schedule/DateController";
 
 async function getSchedule(){
     try{
@@ -50,6 +53,41 @@ async function postSchedule(appointment) {
     }
 }
 
+async function blockSameTimeSchedule(scheduleToverify) {
+    
+    const response = await fetch(`${apiConfig.baseUrl}/schedules`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+
+        },
+        body: JSON.stringify()
+    });
+
+    const schedules = await response.json();
+    console.log(scheduleToverify);
+    return schedules.find( (schedule) => {
+        return (
+            DateController.isSameTime(
+                dayjs(`${schedule.date} ${schedule.time}`, "YYYY-MM-DD HH:mm"),
+                scheduleToverify,
+            )
+            
+        )
+    }) != null;
+
+}
+
+async function deleteSchedule(id) {
+        
+    const response = await fetch(`${apiConfig.baseUrl}/schedules/${id}`, {
+        method: 'DELETE',
+    });
+
+    console.log(response)
+
+}
+
 
 export const ScheduleService = {
     getSchedule : async function() {
@@ -59,5 +97,15 @@ export const ScheduleService = {
     postSchedule : async function(appointment){
 
         return await postSchedule(appointment);
-    }
+    },
+
+    blockSameTimeSchedule : async function(scheduleToverify) {
+        return await blockSameTimeSchedule(scheduleToverify);
+    },
+
+    deleteSchedule : async function(id){
+        await deleteSchedule(id);
+    },
+
 }
+

@@ -17,6 +17,10 @@ function isAfterDate(dateAfter, dateToVerify){
 
 }
 
+function isSameTime(referenceDate, dateToVerify){
+    return referenceDate.isSame(dateToVerify);
+}
+
 
 export const DateController = {
     startDate : function(){
@@ -27,9 +31,14 @@ export const DateController = {
         return isBeforeDate(dateBefore, dateToVerify);
     },
 
-    isAfterDate(dateAfter, dateToVerify){
+    isAfterDate: function(dateAfter, dateToVerify){
         return isAfterDate(dateAfter, dateToVerify);
+    },
+
+    isSameTime: function(referenceDate, dateToVerify){
+        return isSameTime(referenceDate, dateToVerify)
     }
+
 
 
 

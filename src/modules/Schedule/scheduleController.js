@@ -3,6 +3,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { apiConfig } from "../service/api-config";
 import { ScheduleService } from "../service/ScheduleService";
 import { DateController } from "./DateController";
+import { modalController } from "../Modal/ModalController";
 dayjs.extend(customParseFormat);
 
 
@@ -44,12 +45,22 @@ function generateAppointment(appointment, table){
     service.textContent = appointment.service;
 
     const remove = (document.createElement("td"))
+    remove.classList.add('deleteButton');
     remove.textContent = "Remover agendamento";
+
 
     tr.appendChild(time);
     tr.appendChild(petTd);
     tr.appendChild(service);
     tr.appendChild(remove);
+    
+    tr.id = `${appointment.id}`;
+
+    tr.addEventListener('click', async (e) =>{
+
+        await modalController.deleteSchedule(e);
+
+    });
 
 
     table.appendChild(tr);
