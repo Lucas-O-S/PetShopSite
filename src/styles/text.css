@@ -48,6 +48,10 @@ p{
     color: var(--content-error);
 }
 
+.deleteButton{
+    cursor: pointer;
+}
+
 .deleteButton:hover{
     color: var(--content-error) !important;
 }
