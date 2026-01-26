@@ -44,6 +44,7 @@ p{
 }
 
 .errorText{
+    margin: 1rem 0;
     color: var(--content-error);
 }
 

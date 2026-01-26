@@ -1,10 +1,10 @@
-const { SchedulerLoader } = require("./Schedule/schedule.js");
-import {dayController} from './Schedule/dayController';
+const { SchedulerLoader } = require("./Schedule/scheduleController.js");
+import {DateController} from './Schedule/DateController.js';
 import { phoneMask } from './Utils/masks.js';
 const { modalController } = require("./Modal/ModalController.js");
 
 document.addEventListener("DOMContentLoaded", () => {
-    dayController.startDate();
+    DateController.startDate();
     console.log("Page Loaded and Schedule Initialized");
     SchedulerLoader.loadSchedule(document.getElementById("scheduleDateInput").value);
 
@@ -23,7 +23,8 @@ document.getElementById("newScheduleButton").addEventListener("click", () => {
 
 document.addEventListener("click", (e) =>{
 
-    if (e.target.closest('.modalExit')) {
+    if (e.target.id === 'modalExit') {
+        console.log('a');
         modalController.exitSheduleRegisterModal(e);
     }
 

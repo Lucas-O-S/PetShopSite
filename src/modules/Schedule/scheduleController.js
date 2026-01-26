@@ -2,6 +2,7 @@ import dayjs, { Dayjs } from "dayjs";
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { apiConfig } from "../service/api-config";
 import { ScheduleService } from "../service/ScheduleService";
+import { DateController } from "./DateController";
 dayjs.extend(customParseFormat);
 
 
@@ -70,11 +71,12 @@ async function loadSchedule(date){
 
         const fillteredAppointment = scheduleList.filter(appointment => {
 
-            return dayjs(date).date() == dayjs(appointment.date).date()
-                && (dayjs(appointment.time, "HH:mm").isAfter(dayjs(schedule.minTime, "HH:mm")) || dayjs(appointment.time, "HH:mm").isSame(dayjs(schedule.minTime, "HH:mm")))
-                && (dayjs(appointment.time, "HH:mm").isBefore(dayjs(schedule.maxTime, "HH:mm")) || dayjs(appointment.time, "HH:mm").isSame(dayjs(schedule.maxTime, "HH:mm")));
-       
+            return dayjs(date).isSame(dayjs(appointment.date), 'day')  
+                && DateController.isBeforeDate(dayjs(schedule.maxTime, "HH:mm"), dayjs(appointment.time, "HH:mm"))
+                && DateController.isAfterDate(dayjs(schedule.minTime, "HH:mm"), dayjs(appointment.time,  "HH:mm"))
         })
+        
+
 
         fillteredAppointment.forEach(appointment =>{
 

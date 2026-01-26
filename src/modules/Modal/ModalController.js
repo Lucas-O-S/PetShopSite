@@ -1,6 +1,8 @@
-import { schedule } from "../model/schedule";
+import { schedule } from "../model/scheduleModel";
 import { ScheduleService } from "../service/ScheduleService";
-import { SchedulerLoader } from "../Schedule/schedule";
+import { SchedulerLoader } from "../Schedule/scheduleController";
+import { DateController } from "../Schedule/DateController";
+import dayjs from "dayjs";
 
 const error = {
   
@@ -41,30 +43,50 @@ function verifySchedule(){
 
 const submitNewSchedule = () => {
  
+  error.hasError = false;
+
+
   const tutorName = document.getElementById("TutorName").value;
-  const PetName = document.getElementById("PetName").value;
+  const petName = document.getElementById("PetName").value;
   const phone = document.getElementById("Telefone").value;
-  const Service = document.getElementById("Service").value;
-  const Date = document.getElementById("Date").value;
-  const Hour = document.getElementById("Hour").value;
+  const service = document.getElementById("Service").value;
+  const date = document.getElementById("Date").value;
+  const hour = document.getElementById("Hour").value;
 
   const newSchedule = schedule({
-    animalName: PetName,
+    animalName: petName,
     ownerName: tutorName,
-    service: Service,
-    date: Date,
-    time: Hour,
+    service: service,
+    date: date,
+    time: hour,
     phone: phone
   })
 
-  console.log(newSchedule.returnSchedule);
+  const scheduleDate = dayjs(`${date} ${hour}`, "YYYY-MM-DD HH:mm" );
 
-  ScheduleService.postSchedule(newSchedule.returnSchedule());
+  console.log(scheduleDate);
 
-  SchedulerLoader.loadSchedule(Date);
+  if(phone.length < 15 || phone.length > 15 ){
+    error.text = 'Telefone invalida, tamanho incopativel';
+    error.hasError = true;
+  }
+
+  else if(DateController.isBeforeDate(dayjs(), scheduleDate)){
+    error.text = 'Data invalida, digite uma data posterior';
+    error.hasError = true;
+  }
 
 
-  exitSheduleRegisterModal({target: document.getElementById("modalExit")});
+  console.log(phone);
+
+  if(!error.hasError){
+
+    ScheduleService.postSchedule(newSchedule.returnSchedule());
+  
+    SchedulerLoader.loadSchedule(date);
+  
+    exitSheduleRegisterModal({target: document.getElementById("modalExit")});
+  }
 
 }
 
@@ -79,6 +101,7 @@ const errorControler = () => {
   if(error.hasError){
   
     errorElement.textContent = error.text;
+    errorElement.classList.remove("hidden");
   
   }
 
