@@ -97,30 +97,6 @@
       "time": "09:30"
     },
     {
-      "id": "85bf",
-      "animalName": "asd",
-      "ownerName": "asd",
-      "service": " adssad",
-      "date": "2026-01-15",
-      "time": "09:30"
-    },
-    {
-      "id": "0c0b",
-      "animalName": "asd",
-      "ownerName": "asd",
-      "service": " adssad",
-      "date": "2026-01-15",
-      "time": "09:30"
-    },
-    {
-      "id": "d220",
-      "animalName": "asd",
-      "ownerName": "asd",
-      "service": " adssad",
-      "date": "2026-01-15",
-      "time": "09:30"
-    },
-    {
       "id": "5531",
       "animalName": "asd",
       "ownerName": "asd",
@@ -161,28 +137,12 @@
       "time": "09:30"
     },
     {
-      "id": "0463",
-      "animalName": "asd",
-      "ownerName": "sad",
-      "service": " sd",
-      "date": "2026-01-21",
-      "time": "09:00"
-    },
-    {
       "id": "00a5",
       "animalName": "fsaf",
       "ownerName": "ds",
       "service": " dfaf",
       "date": "2026-01-22",
       "time": "10:30"
-    },
-    {
-      "id": "4e42",
-      "animalName": "asdasd",
-      "ownerName": "asdasd",
-      "service": " sadads",
-      "date": "2026-01-27",
-      "time": "09:30"
     },
     {
       "id": "5dbc",
@@ -199,14 +159,6 @@
       "service": " dsfdsf",
       "date": "2026-01-19",
       "time": "11:30"
-    },
-    {
-      "id": "82a8",
-      "animalName": "asdasdsa",
-      "ownerName": "asax",
-      "service": " efs",
-      "date": "2026-01-20",
-      "time": "09:30"
     },
     {
       "id": "cbbf",
@@ -241,14 +193,6 @@
       "time": "10:00"
     },
     {
-      "id": "84db",
-      "animalName": "asdads",
-      "ownerName": "asdsad",
-      "service": " sad",
-      "date": "2026-01-27",
-      "time": "09:30"
-    },
-    {
       "id": "49bb",
       "animalName": "asdas",
       "ownerName": "afdas",
@@ -257,36 +201,12 @@
       "time": "10:00"
     },
     {
-      "id": "9833",
-      "animalName": "sadf",
-      "ownerName": "sadf",
-      "service": " adf",
-      "date": "2026-01-28",
-      "time": "09:00"
-    },
-    {
       "id": "2d7b",
       "animalName": "asd",
       "ownerName": "asd",
       "service": " sad",
       "date": "2026-02-04",
       "time": "09:30"
-    },
-    {
-      "id": "0a59",
-      "animalName": "sadsd",
-      "ownerName": "asax",
-      "service": " ad",
-      "date": "2026-01-27",
-      "time": "10:00"
-    },
-    {
-      "id": "f00e",
-      "animalName": "sadsd",
-      "ownerName": "asax",
-      "service": " ad",
-      "date": "2026-01-27",
-      "time": "10:00"
     },
     {
       "id": "fdd7",
@@ -385,14 +305,6 @@
       "time": "11:30"
     },
     {
-      "id": "9ddc",
-      "animalName": "1rdf",
-      "ownerName": "asf",
-      "service": " ads",
-      "date": "2026-01-27",
-      "time": "10:00"
-    },
-    {
       "id": "9bc2",
       "animalName": "sad",
       "ownerName": "asddsa",
@@ -415,22 +327,6 @@
       "service": " s",
       "date": "2026-01-30",
       "time": "10:00"
-    },
-    {
-      "id": "b867",
-      "animalName": "sad",
-      "ownerName": "sad",
-      "service": " sda",
-      "date": "2026-01-26",
-      "time": "09:30"
-    },
-    {
-      "id": "3dea",
-      "animalName": "dasd",
-      "ownerName": "sda",
-      "service": " sda",
-      "date": "2026-01-26",
-      "time": "09:30"
     },
     {
       "id": "568b",

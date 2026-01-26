@@ -125,7 +125,8 @@ const deleteSchedule = async (e) => {
     
   }
 
-  SchedulerLoader.loadSchedule();
+  location.reload();
+
 } 
 
 export const modalController = {
